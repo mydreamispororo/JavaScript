@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //객체 : let 이름 = {}
+        //배열 : let 이름 = [{객체1}, {객체2}]
+
+        let member  = {
+            id : 1,
+            userid : 'koreait',
+            passwd : '1234'
+        };
+
+        console.log("----- 객체 출력 -----");
+        console.log(member.id); //객체 값 꺼내올때 이 방법으로 대부분 사용
+        console.log(member["userid"]); //이 방법은 잘 사용안함
+        console.log("");
+        console.log("---------- 객체 반복문(for in) 으로 출력 ----------");
+        /*
+        for(별명 in 객체명) {
+            console.log(객체명["별명"]);
+        }
+        */
+
+        for(m in member) {
+            // console.log(member[key]);
+            console.log(`${key}는 ${member[key]}`);
+
+        }
+
+        let members = [
+            {
+                id : 3,
+                userid : 'Daegu',
+                passwd : '0000'
+            }, 
+            {
+                id : 1,
+                userid : 'Seoul',
+                passwd : '1234'
+            }, 
+            {
+                id : 2,
+                userid : 'Busan',
+                passwd : '1111'
+            }
+        ];
+        
+        //자바스크립트 객체
+        console.log(members);
+
+        //자바스크립트 -> Json(통신)
+        //송신 : JSON.stringify(배열명) -> 인터넷 통신 -> 수신 : JSON.parse(배열명) *** 중요!
+        console.log(JSON.stringify(members));
+        
+        //배열 분해 각각의 요소
+        /*배열명.forEach((별명) => { 화살표함수 쓰면 무조건 중괄호 사용하기
+            출력코드
+        });*/
+
+        members.forEach( (el) => {
+            console.log(el);
+
+        console.log("");
+
+        members.forEach((val, key) => {
+            console.log(`${key}는 ${val.userid}`);
+        })
+        })
+
+
+
+
+    </script>
+    
+</body>
+</html>

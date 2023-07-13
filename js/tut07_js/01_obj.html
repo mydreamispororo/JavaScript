@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        순서가 없는 데이터를 처리할 때는 key:value
+        Map, json
+
+        객체 : 타입 다르고, 개수 한 명
+        객체배열 : 타입 다르고, 개수를 많이 다룰 때 - [{}, {}, {}]
+        json, 자바스크립트 객체
+        key : value
+        userid : "koreait" -> 자바스크립트
+        "userid" : "koreait" -> json
+
+        @ResponseBody
+        */
+
+        let member = {
+            username: "홍길동",
+            passwd: "1234",
+            age: 10,
+            isMember: false
+        };
+        //객체를 출력할 때 쓰는 반복문은 for ~ in
+        /*
+        for(별명 in 객체명) {
+            console.log(객체명[별명]);
+        }
+        */
+
+        for(k in member) {
+            console.log(`${k}`);
+        }
+
+        console.log("-----------");
+
+        for(key in member) {
+            console.log(`${key}의 값은 ${member[key]}`);
+        }
+
+        //객체배열
+        let members = [
+            {
+                username: "홍길동1",
+                passwd: "1111",
+                age: 15
+            },
+            {
+                username: "홍길동2",
+                passwd: "2222",
+                age: 20
+            },
+            {
+                username: "홍길동3",
+                passwd: "3333",
+                age: 25
+            }
+        ];
+
+        // console.log(members);
+        // console.log(JSON.stringify(members, null, 4));
+        //json -> js : JSON.parse(객체배열명)
+
+        /*
+        객체배열명.forEach((el) => {
+            console.log(el.옵션);
+        })
+        */
+
+        members.forEach((m) => {
+            console.log(`이름 : ${m.username} 비번 : ${m.passwd} 나이 : ${m.age}`)
+        });
+
+
+    </script>
+</body>
+</html>

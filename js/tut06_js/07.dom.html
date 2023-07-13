@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="imgWrap">
+        <!-- createElement : 이미지 태그 -->
+    </div>
+
+    <script>
+        let imgBox = document.querySelector(".imgWrap");
+
+        let d = new Date();
+        // console.log(d.getHours());
+
+        
+        let imgTag = document.createElement("img");
+        imgTag.src = (d.getHours < 13) ? "images/b1.gif" : "images/b2.jpg";
+
+        imgBox.appendChild(imgTag);
+
+    </script>
+</body>
+</html>
